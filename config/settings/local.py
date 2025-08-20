@@ -1,3 +1,5 @@
+import dj_database_url
+
 from .base import *  # noqa: F403
 from .base import INSTALLED_APPS
 from .base import MIDDLEWARE
@@ -8,12 +10,17 @@ from .base import env
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = env(
-    "DJANGO_SECRET_KEY",
-    default="OlOOhzSVRWHKDGWeV7K2ocqv0XO4RNsjeiZEflCjSkvnHyGeQ8epGVe7kXRvs3Pk",
-)
+SECRET_KEY = env("SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]  # noqa: S104
+
+# DATABASES
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES["default"] = dj_database_url.config(
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 # CACHES
 # ------------------------------------------------------------------------------

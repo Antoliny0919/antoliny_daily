@@ -1,34 +1,29 @@
-volumes:
-  antoliny_daily_local_postgres_data: {}
-  antoliny_daily_local_postgres_data_backups: {}
-  
-
 services:
-  django:
+  web:
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: antoliny_daily_local_django
-    container_name: antoliny_daily_local_django
+    container_name: daily-local-web
     depends_on:
-      - postgres
+      - db
     volumes:
       - .:/app:z
+      - /app/.venv
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
     ports:
       - '8000:8000'
-    command: /start
 
-  postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: antoliny_daily_production_postgres
-    container_name: antoliny_daily_local_postgres
+  db:
+    image: postgres:17
+    container_name: daily-local-db
     volumes:
-      - antoliny_daily_local_postgres_data:/var/lib/postgresql/data
-      - antoliny_daily_local_postgres_data_backups:/backups
+      - postgres_local_data:/var/lib/postgresql/data/
     env_file:
-      - ./.envs/.local/.postgres
+      - .envs/.local/.postgres
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_local_data:
