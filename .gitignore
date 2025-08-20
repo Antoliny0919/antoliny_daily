@@ -328,3 +328,4 @@ antoliny_daily/media/
 .ipython/
 .env
 .envs/*
+.idea
