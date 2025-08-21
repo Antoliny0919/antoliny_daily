@@ -323,6 +323,7 @@ dump.rdb
 
 ### Project template
 antoliny_daily/media/
+antoliny_daily/theme/static/css/dist/styles.css
 
 .pytest_cache/
 .ipython/

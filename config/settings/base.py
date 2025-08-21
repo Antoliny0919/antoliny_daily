@@ -72,11 +72,12 @@ DJANGO_APPS = [
     "django.forms",
 ]
 THIRD_PARTY_APPS = [
+    "tailwind",
 ]
 
 LOCAL_APPS = [
     "antoliny_daily.users",
-    # Your stuff: custom apps go here
+    "antoliny_daily.theme",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -246,5 +247,6 @@ LOGGING = {
 # REDIS_SSL = REDIS_URL.startswith("rediss://")
 
 
-# Your stuff...
+# TAILWIND
 # ------------------------------------------------------------------------------
+TAILWIND_APP_NAME = "antoliny_daily.theme"
