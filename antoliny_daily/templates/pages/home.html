@@ -1,3 +1,20 @@
 {% extends "base.html" %}
-
-
+{% load static %}
+{% block title %}Antoliny's Daily{% endblock %}
+{% block meta_title %}Antoliny's Daily{% endblock %}
+{% block content %}
+    <main>
+        <div class="py-12">
+            <div class="flex flex-col items-center">
+                <h1 class="font-title text-6xl">Antoliny's Daily</h1>
+                <p class="my-8 font-ui text-xl md:text-2xl">
+                    Hello, I’m Antoliny. I enjoy web development and love contributing to open source. Welcome to my space!
+                </p>
+            </div>
+            <div>
+                <img class="md:w-100% mx-auto md:w-[70%]"
+                     src="{% static 'img/banner.png' %}">
+            </div>
+        </div>
+    </main>
+{% endblock %}
