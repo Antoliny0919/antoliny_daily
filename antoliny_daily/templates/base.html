@@ -17,11 +17,12 @@
         {% tailwind_css %}
     </head>
     <body class="flex flex-col h-screen font-common {% block body_class %}{% endblock %}">
-        <div class="mb-auto flex justify-center">
+        <div class="mt-auto flex justify-center">
             <div class="container mb-auto mx-auto w-7/8 {% block extra_top_css %}{% endblock %}">
                 {% block content %}{% endblock %}
             </div>
         </div>
+        {% include 'includes/footer.html' %}
         <script defer
                 src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         {% block extra_media %}{% endblock %}
