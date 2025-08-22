@@ -1,22 +1,29 @@
 {% load i18n static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <title>{% block title %}{% endblock %}</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="title" content="{% block meta_title %}{% endblock meta_title %}"/>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="title"
+              content="{% block meta_title %}{% endblock meta_title %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+              rel="stylesheet">
         {% tailwind_css %}
-	</head>
+    </head>
     <body class="flex flex-col h-screen font-common {% block body_class %}{% endblock %}">
         <div class="mb-auto flex justify-center">
             <div class="container mb-auto mx-auto w-7/8 {% block extra_top_css %}{% endblock %}">
-                {% block content %}
-                {% endblock %}
+                {% block content %}{% endblock %}
             </div>
         </div>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer
+                src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         {% block extra_media %}{% endblock %}
     </body>
 </html>
