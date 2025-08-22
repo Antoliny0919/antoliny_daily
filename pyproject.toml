@@ -21,7 +21,6 @@ base = [
 
 lint = [
     "ruff==0.12.9",
-    "djlint==1.36.4",
 ]
 
 local = [
