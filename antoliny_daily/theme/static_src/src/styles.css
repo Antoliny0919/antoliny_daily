@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+    --font-logo: "Edu NSW ACT Cursive", cursive;
     --font-title: "Libertinus Sans", sans-serif;
     --font-text: "Nunito", sans-serif;
     --font-ui: "Raleway", sans-serif;
