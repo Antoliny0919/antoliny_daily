@@ -1,6 +1,6 @@
 {% load i18n static tailwind_tags %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <title>
             {% block title %}{% endblock %}
@@ -14,6 +14,30 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         {% tailwind_css %}
+        <script>
+          (function() {
+            const theme = localStorage.getItem('theme') || 'system';
+            const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Apply the dark class to prevent FOUC
+            if (theme === 'dark' || (theme === 'system' && isSystemDark)) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+
+            // Store the initial system preference
+            localStorage.setItem('isSystemDark', isSystemDark);
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+              localStorage.setItem('isSystemDark', event.matches);
+              if (theme === 'system') {
+                document.documentElement.classList.toggle('dark', event.matches);
+              }
+            });
+          })();
+        </script>
     </head>
     <body class="flex flex-col h-screen font-common {% block body_class %}{% endblock %}">
         {% include 'includes/nav.html' %}
