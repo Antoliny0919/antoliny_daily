@@ -3,10 +3,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+    /* FONT */
     --font-logo: "Edu NSW ACT Cursive", cursive;
     --font-title: "Libertinus Sans", sans-serif;
     --font-text: "Nunito", sans-serif;
     --font-ui: "Raleway", sans-serif;
+    /* COLOR */
+    --color-base-black: #0a0a0a;
+    --color-base-white: #fafafa;
+    --color-base-fg-black: #1a1a1a;
+    --color-base-fg-white: #f8f8f8;
+
+    --color-base-brown-400: #735726;
+    --color-base-brown-800: #543c1b;
 }
 
 /**

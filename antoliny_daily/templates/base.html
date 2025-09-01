@@ -41,7 +41,7 @@
     </head>
     <body class="flex flex-col h-screen font-common {% block body_class %}{% endblock %}">
         {% include 'includes/nav.html' %}
-        <div class="mt-auto flex justify-center">
+        <div class="mt-auto flex justify-center bg-base-white text-base-fg-black dark:bg-base-black dark:text-base-fg-white">
             <div class="container mb-auto mx-auto w-7/8 {% block extra_top_css %}{% endblock %}">
                 {% block content %}{% endblock %}
             </div>
