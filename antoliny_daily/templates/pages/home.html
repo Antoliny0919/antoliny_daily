@@ -2,11 +2,18 @@
 {% load static %}
 {% block title %}Antoliny's Daily{% endblock %}
 {% block meta_title %}Antoliny's Daily{% endblock %}
+{% block extra_media %}
+    <script src="{% static 'js/animation.js' %}"></script>
+{% endblock %}
 {% block content %}
     <main>
         <div class="py-12">
             <div class="flex flex-col items-center">
-                <h1 class="font-title text-6xl">Antoliny's Daily</h1>
+                <h1 class="font-title text-6xl">
+                    <span>Antoliny's</span>
+                    <span class="relative text-base-brown-600 dark:text-base-brown-200" data-animation="typing" data-typing-items="Life,Daily,Notes,Diary,Journey"></span>
+                    <span class="inline-block w-1 h-12 bg-base-brown-600 animate-blink dark:bg-base-brown-200"></span>
+                </h1>
                 <p class="my-8 font-ui text-xl md:text-2xl">
                     Hello, I’m Antoliny. I enjoy web development and love contributing to open source. Welcome to my space!
                 </p>

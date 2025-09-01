@@ -14,8 +14,17 @@
     --color-base-fg-black: #1a1a1a;
     --color-base-fg-white: #f8f8f8;
 
+    --color-base-brown-200: #B08946;
     --color-base-brown-400: #735726;
+    --color-base-brown-600: #634A20;
     --color-base-brown-800: #543c1b;
+    /* ANIMATE */
+    --animate-blink: blink 1s infinite;
+
+    @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+    }
 }
 
 /**
