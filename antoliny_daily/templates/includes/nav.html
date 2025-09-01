@@ -1,11 +1,11 @@
 {% load static %}
 
-<nav class="flex justify-between items-center py-2 bg-base-brown-400 dark:bg-base-brown-800">
-  <a class="flex items-center justify-center gap-2 my-0 mx-auto" href="/">
+<nav class="relative flex justify-between items-center py-4 bg-base-brown-400 dark:bg-base-brown-800">
+  <a class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 my-0 mx-auto" href="/">
     <span class="font-logo font-bold text-3xl text-white">ANTOLINY</span>
     <img class="h-[60px]" alt="Antoliny Daily Logo" src="{% static 'img/logo.png' %}">
   </a>
-  <div class="mx-8">
+  <div class="ml-auto mx-8">
       <ul>
         <li class="relative"
            x-data="{
