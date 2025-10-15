@@ -12,7 +12,7 @@ base = [
     "psycopg[binary]==3.2.10",
     "argon2-cffi==25.1.0",
     "whitenoise==6.11.0",
-    "hiredis==3.2.1",
+    "hiredis==3.3.0",
     "django==5.2.7",
     "django-environ==0.12.0",
     "dj-database-url==3.0.1",
@@ -20,7 +20,7 @@ base = [
 ]
 
 lint = [
-    "ruff==0.13.3",
+    "ruff==0.14.0",
 ]
 
 local = [
